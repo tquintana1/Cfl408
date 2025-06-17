@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ver Reseñas - La Cueva</title>
+    <link rel="stylesheet" href="lvcStyle.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <header class="d-flex justify-content-between align-items-center p-3">
+        <div class="logo">
+            <a href="cueva.html"><img src="logo-placeholder.png" alt="Logo del sitio web" class="logo-img"></a>
+        </div>
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" class="barra-busqueda" placeholder="Buscar reseñas...">
+        </div>
+        <div class="perfil-container">
+            <a href="perfil.html" class="perfil-icono" title="Mi Perfil"><i class="fas fa-user-circle"></i></a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="cueva.html#RJ"><button class="boton">JUEGOS</button></a>
+        <a href="cueva.html#RP"><button class="boton">PELICULAS</button></a>
+        <a href="cueva.html#RS"><button class="boton">SERIES</button></a>
+        <a href="VerResenas.html"><button class="boton">VER RESEÑAS</button></a>
+        <a href="Registro.html"><button class="boton">REGISTRARSE</button></a>
+        <a href="Ar.html"><button class="boton boton-cta">AGREGAR RESEÑA</button></a>
+    </nav>
+
+    <main class="reviews-grid-container">
+        <h1>Reseñas Publicadas</h1>
+        <div class="reviews-grid" id="reseñasContainer">
+            </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="redes-sociales">
+            <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
+            <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 La Cueva. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cont = document.getElementById('reseñasContainer');
+            const reseñas = JSON.parse(localStorage.getItem('reseñas')) || [];
+
+            if (reseñas.length === 0) {
+                cont.innerHTML = '<p style="text-align:center; color: #333; grid-column: 1 / -1;">No se han publicado reseñas aún. ¡Sé el primero!</p>';
+                return;
+            }
+
+            reseñas.reverse().forEach(r => {
+                const div = document.createElement('div');
+                div.className = 'review-card';
+                div.innerHTML = `
+                    <img src="${r.imagen || 'placeholder-reseña.png'}" alt="Póster de ${r.titulo}" style="width:100%; border-radius: 8px; margin-bottom: 1rem; object-fit: cover; aspect-ratio: 2/3;">
+                    <h3>${r.titulo}</h3>
+                    <div class="meta">${r.categoria} | ${r.genero}</div>
+                    <div class="text">${r.reseña}</div>
+                    <div class="author">— ${r.autor}</div>
+                `;
+                cont.appendChild(div);
+            });
+        });
+    </script>
+</body>
+</html>

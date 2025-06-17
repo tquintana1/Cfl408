@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro de Usuario - La Cueva</title>
+    <link rel="stylesheet" href="lvcStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="d-flex justify-content-between align-items-center p-3">
+        <div class="logo">
+            <a href="cueva.html"><img src="logo-placeholder.png" alt="Logo del sitio web" class="logo-img"></a>
+        </div>
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" class="barra-busqueda" placeholder="Buscar reseñas...">
+        </div>
+        <div class="perfil-container">
+            <a href="perfil.html" class="perfil-icono" title="Mi Perfil"><i class="fas fa-user-circle"></i></a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="cueva.html#RJ"><button class="boton">JUEGOS</button></a>
+        <a href="cueva.html#RP"><button class="boton">PELICULAS</button></a>
+        <a href="cueva.html#RS"><button class="boton">SERIES</button></a>
+        <a href="VerResenas.html"><button class="boton">VER RESEÑAS</button></a>
+        <a href="Registro.html"><button class="boton">REGISTRARSE</button></a>
+        <a href="Ar.html"><button class="boton boton-cta">AGREGAR RESEÑA</button></a>
+    </nav>
+
+    <main>
+        <div class="form-container">
+            <h2>Crear una cuenta</h2>
+            <form action="registrar_usuario.php" method="post">
+                <label for="nombre">Nombre de Usuario:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="telefono">Teléfono (Opcional):</label>
+                <input type="tel" id="telefono" name="telefono">
+            
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            
+                <input type="submit" class="boton boton-cta" value="Crear Cuenta">
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="redes-sociales">
+            <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" title="Spotify"><i class="fab fa-spotify"></i></a>
+            <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 La Cueva. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

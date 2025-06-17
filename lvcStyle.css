@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white; /* Fondo general claro */
+}
+
+h1 {
+  margin-top: 10vh;
+  text-align: center;
+  position: relative;
+  font-size: 4vh;
+  margin-bottom: 5vh;
+  color: #333; /* Color oscuro para títulos en fondo claro */
+}
+
+h1::after {
+  content: '';
+  display: block;
+  width: 80vw;
+  height: 0.5vh;
+  background-color: gray;
+  margin: 2vh auto 0 auto;
+  border-radius: 1vh;
+}
+
+h2,h3,h4,h5, p {
+    color: gray;
+}
+
+header{ 
+    background-color: black;
+    text-align: center;
+    border-bottom: 2px solid #5a4dcf;
+    height: 15vh;
+    padding: 0 2rem; /* Añadimos padding para que no se pegue a los bordes */
+}
+
+.barra-busqueda {
+    width: 60vh;          
+    padding: 2vh 3vh;   
+    font-size: 2.5vh;     
+    border: none;
+    border-radius: 2vh;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #ddd;
+}
+
+.barra-busqueda:focus {
+    background-color: white;
+    box-shadow: 0 0 1vh #5a4dcf;
+    transform: scale(1.02);
+}
+
+nav {
+    background-color: #161e3f;
+    display: flex;
+    justify-content: center; /* Centramos los botones */
+    flex-wrap: wrap; /* Para que se adapte en pantallas chicas */
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem; /* Espacio entre botones */
+    border-bottom-left-radius: 1.5vh;
+    border-bottom-right-radius: 1.5vh;
+}
+
+.boton {
+    width: auto; /* Ancho automático para que se ajuste al texto */
+    padding: 0.8rem 1.5rem; /* Padding horizontal y vertical */
+    font-size: 1rem;
+    background-color: #3f367a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.boton:hover {
+    transform: scale(1.1);
+    background-color: #5a4dcf;
+}
+
+section{
+    padding: 4rem 2rem;
+    background-color: #f4f4f9; /* Un gris muy claro para las secciones */
+    margin: 5vh 5vw; /* Margen relativo */
+    border-radius: 15px;
+}
+
+.card{
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 22vw; /* Ancho relativo para que quepan 4 por fila aprox. */
+    min-width: 280px;
+    display: flex;
+    flex-direction: column; /* Apila la imagen y el texto verticalmente */
+    overflow: hidden; /* Esconde cualquier parte de la imagen que se salga */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+.card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card .card-body button {
+    margin-top: auto; /* Empuja el botón hacia abajo */
+}
+
+.carousel-item{
+    padding: 2rem;
+    margin: 1rem;
+    width: auto;
+    height: auto;
+    font-size: 1.2rem;
+    border: 3px solid #3f367a;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: #3f367a;
+}
+
+.carrousel {
+  color: gray;
+  text-align: center;
+  border-radius: 4vh;
+  margin: 2vh;
+}
+
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrow-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.items-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item.center {
+  transform: scale(1.4);
+  font-weight: bold;
+  background-color: #3f367a;
+  color: white;
+  border-color: #5a4dcf;
+}
+
+.carousel-item.side-1 {
+  transform: scale(1.15);
+}
+
+.carousel-item.side-2 {
+  transform: scale(0.95);
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+}
+
+.perfil-icono {
+    color: white;
+    font-size: 3em;
+    transition: color 0.3s ease;
+}
+
+.perfil-icono:hover {
+    color: #5a4dcf;
+}
+
+.boton-cta {
+    background-color: #5a4dcf;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.boton-cta:hover {
+    background-color: #3f367a;
+    transform: scale(1.1);
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 10vh auto;
+    padding: 40px;
+    background-color: #161e3f;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid #5a4dcf;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.form-container form label {
+    display: block;
+    color: #ddd;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.form-container form input[type="text"],
+.form-container form input[type="email"],
+.form-container form input[type="tel"],
+.form-container form input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #272a5c;
+    border: 1px solid #3f367a;
+    border-radius: 8px;
+    color: white;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-container form input:focus {
+    outline: none;
+    border-color: #5a4dcf;
+    box-shadow: 0 0 10px #5a4dcf;
+}
+
+.form-container form input[type="submit"] {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.4em;
+    margin-top: 10px;
+}
+
+.site-footer {
+    background-color: #000;
+    color: #888;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 2px solid #5a4dcf;
+    margin-top: 10vh;
+}
+
+.site-footer .redes-sociales {
+    margin-bottom: 20px;
+}
+
+.site-footer .redes-sociales a {
+    color: white;
+    font-size: 2em;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.site-footer .redes-sociales a:hover {
+    color: #5a4dcf;
+    transform: translateY(-5px);
+}
+
+.site-footer .copyright {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.review-form-container {
+    max-width: 800px;
+    margin: 10vh auto;
+    padding: 40px;
+    background-color: #161e3f;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid #5a4dcf;
+}
+
+.review-form-container h1 {
+    color: white;
+}
+
+.review-form-container label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #ddd;
+}
+
+.review-form-container input,
+.review-form-container select,
+.review-form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #3f367a;
+    background: #272a5c;
+    color: white;
+    font-size: 1em;
+}
+
+.review-form-container input:focus,
+.review-form-container select:focus,
+.review-form-container textarea:focus {
+    outline: none;
+    border-color: #5a4dcf;
+    box-shadow: 0 0 10px #5a4dcf;
+}
+
+.review-form-container button {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #5a4dcf;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.review-form-container button:hover {
+    background: #3f367a;
+}
+
+.reviews-grid-container {
+    max-width: 1200px;
+    margin: 5vh auto;
+    padding: 2rem;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.review-card {
+    background-color: white;
+    color: gray;
+    border-radius: 15px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #5a4dcf;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.review-card h3 {
+    margin-bottom: 0.5rem;
+    color: #3f367a;
+    font-size: 1.5em;
+}
+
+.review-card .meta {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.review-card .text {
+    flex-grow: 1;
+    color: #333;
+    line-height: 1.6;
+}
+
+.review-card .author {
+    margin-top: 1rem;
+    font-style: italic;
+    text-align: right;
+    color: #5a4dcf;
+    font-weight: bold;
+}
